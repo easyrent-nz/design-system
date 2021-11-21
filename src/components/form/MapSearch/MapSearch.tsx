@@ -91,16 +91,25 @@ const MapSearch: React.FC<MapSearchProps> = ({
         >
           {markers}
         </MapView>
-        <Paper elevation={4} sx={{ position: 'absolute', right: 8, top: 8 }}>
-          <ButtonGroup orientation='vertical' variant='outlined' aria-label='outlined button group'>
-            <ZoomButton onClick={() => setZoom((z) => z + 1)}>
-              <AddIcon />
-            </ZoomButton>
-            <ZoomButton onClick={() => setZoom((z) => z - 1)}>
-              <RemoveIcon />
-            </ZoomButton>
-          </ButtonGroup>
-        </Paper>
+        <ButtonGroup
+          sx={{
+            position: 'absolute',
+            right: 8,
+            top: 8,
+            boxShadow: (theme) => theme.shadows[4],
+            background: 'white',
+          }}
+          orientation='vertical'
+          variant='outlined'
+          aria-label='Map Zoom Controls'
+        >
+          <ZoomButton onClick={() => setZoom((z) => z + 1)}>
+            <AddIcon />
+          </ZoomButton>
+          <ZoomButton onClick={() => setZoom((z) => z - 1)}>
+            <RemoveIcon />
+          </ZoomButton>
+        </ButtonGroup>
         <Overlay alignItems='center'>
           {hasChanged ? (
             <LoadingButton
@@ -120,7 +129,6 @@ const MapSearch: React.FC<MapSearchProps> = ({
         </Overlay>
         )
       </Box>
-      <Typography>{zoom}</Typography>
     </>
   );
 };

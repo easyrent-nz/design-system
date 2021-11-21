@@ -33,6 +33,7 @@ declare module '@mui/material/styles' {
   interface ThemeOptions {
     shape?: {
       cardRadius?: number;
+      borderRadius?: number;
     };
     decoration?: {
       glow?: {
@@ -75,6 +76,7 @@ let theme = createTheme({
     },
   },
   shape: {
+    borderRadius: 8,
     cardRadius: 8,
   },
   typography: {
@@ -138,11 +140,6 @@ theme = createTheme(theme, {
 theme = createTheme(theme, {
   components: {
     MuiButton: {
-      styleOverrides: {
-        root: {
-          borderRadius: 8,
-        },
-      },
       defaultProps: {
         disableElevation: true,
         color: 'secondary',
