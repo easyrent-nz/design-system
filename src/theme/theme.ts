@@ -81,7 +81,13 @@ let theme = createTheme({
     fontFamily: "'Open Sans', sans-serif",
     h1: {
       fontFamily: "'Raleway', sans-serif",
-      fontWeight: 400,
+      fontWeight: 600,
+      fontSize: '4.5rem',
+    },
+    h2: {
+      fontFamily: "'Raleway', sans-serif",
+      fontWeight: 600,
+      fontSize: '3.5rem',
     },
     h3: {
       fontFamily: "'Raleway', sans-serif",
