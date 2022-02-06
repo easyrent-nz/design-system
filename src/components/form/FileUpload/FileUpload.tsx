@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { ReactNode, useState } from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
 
