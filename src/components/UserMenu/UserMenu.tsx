@@ -1,11 +1,11 @@
 import { IconButton, Avatar, Menu } from '@mui/material';
-import React, { useEffect, useState } from 'react';
+import React, { PropsWithChildren, useEffect, useState } from 'react';
 
 export interface UserMenuProps {
   picture?: string;
 }
 
-const UserMenu: React.FC<UserMenuProps> = ({ picture, children }) => {
+const UserMenu = ({ picture, children }: PropsWithChildren<UserMenuProps>) => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
   const handleMenu = (event: React.MouseEvent<HTMLElement>) => {

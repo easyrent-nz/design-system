@@ -49,14 +49,14 @@ const Zone = styled(ButtonBase)(({ theme }) => ({
  * Basic component for allowing a user to upload files, either by dragging them onto the component,
  * or by clicking the component to bring up a file dialog.
  */
-const Dropzone: React.FC<DropzoneProps> = ({
+const Dropzone = ({
   icon: Icon = FileUploadIcon,
   accept,
   multiple,
   label: prompt = 'Drag a file to upload',
   disabled,
   onUpload,
-}) => {
+}: DropzoneProps) => {
   const [hovered, setHovered] = useState<boolean>(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {

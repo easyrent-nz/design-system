@@ -1,5 +1,5 @@
 import { Skeleton, styled } from '@mui/material';
-import React from 'react';
+import { PropsWithChildren } from 'react';
 
 export interface AspectImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   ratio?: [number, number];
@@ -29,13 +29,13 @@ const ImageSkeleton = styled(Skeleton)({
  * image will fill 100% of its parent container. If no image is provided, a skeleton loading
  * component will be displayed instead.
  */
-const AspectImage: React.FC<AspectImageProps> = ({
+const AspectImage = ({
   ratio = [16, 9],
   rounded,
   children,
   src,
   ...rest
-}) => {
+}: PropsWithChildren<AspectImageProps>) => {
   const AspectContainer = styled('div')(({ theme }) => ({
     width: '100%',
     paddingTop: `${(ratio[1] / ratio[0]) * 100}%`,

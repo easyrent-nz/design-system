@@ -16,7 +16,7 @@ const BannerShape = styled(Box)(({ theme }) => ({
   margin: `${theme.spacing(4)} 0`,
 }));
 
-const ReservedBanner: React.FC<ReservedBannerProps> = ({ color = 'primary', title, subTitle }) => {
+const ReservedBanner = ({ color = 'primary', title, subTitle }: ReservedBannerProps) => {
   return (
     <BannerShape sx={{ backgroundColor: `${color}.main` }}>
       <Typography

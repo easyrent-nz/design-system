@@ -13,7 +13,7 @@ export interface DateRangePickerProps
   label?: string;
 }
 
-const DateRangePicker: React.FC<DateRangePickerProps> = ({ name, label, ...rest }) => {
+const DateRangePicker = ({ name, label, ...rest }: DateRangePickerProps) => {
   const {
     control,
     formState: { errors },

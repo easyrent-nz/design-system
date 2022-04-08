@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { PropsWithChildren, useContext, useEffect } from 'react';
 import { MultiStepFormContext } from './MultiStepFormContext';
 
 export interface FormStepProps {
@@ -18,7 +18,12 @@ export interface FormStepProps {
   schema?: Record<string, any>;
 }
 
-const FormStep: React.FC<FormStepProps> = ({ step, children, confirmationPage, schema }) => {
+const FormStep = ({
+  step,
+  children,
+  confirmationPage,
+  schema,
+}: PropsWithChildren<FormStepProps>) => {
   const ctx = useContext(MultiStepFormContext);
 
   useEffect(() => {

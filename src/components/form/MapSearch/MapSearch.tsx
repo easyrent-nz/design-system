@@ -40,12 +40,12 @@ const Overlay = styled(Stack)({
   },
 });
 
-const MapSearch: React.FC<MapSearchProps> = ({
+const MapSearch = ({
   onChange,
   listings = [],
   onSelectedListingChange,
   apiKey,
-}) => {
+}: MapSearchProps) => {
   const [zoom, setZoom] = useState(13);
   const [pos, setPos] = useState(cities.auckland);
   const [hasChanged, setHasChanged] = useState(false);

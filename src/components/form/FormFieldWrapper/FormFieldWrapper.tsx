@@ -1,5 +1,5 @@
 import { FormControl, FormControlProps, FormHelperText, FormLabel, styled } from '@mui/material';
-import React, { ReactNode } from 'react';
+import React, { ReactNode, PropsWithChildren } from 'react';
 import { ErrorOption } from 'react-hook-form';
 
 const StyledFormLabel = styled(FormLabel)(({ theme }) => ({
@@ -14,13 +14,13 @@ export interface FormFieldWrapperProps extends FormControlProps {
   errorObject?: ErrorOption;
 }
 
-const FormFieldWrapper: React.FC<FormFieldWrapperProps> = ({
+const FormFieldWrapper = ({
   children,
   label,
   required,
   errorObject,
   ...rest
-}) => {
+}: PropsWithChildren<FormFieldWrapperProps>) => {
   return (
     <FormControl required={required} error={Boolean(errorObject)} {...rest}>
       {label && <StyledFormLabel>{label}</StyledFormLabel>}

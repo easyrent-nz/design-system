@@ -15,7 +15,7 @@ export interface RadioSelectionProps {
   options: (Partial<FormControlLabelProps> & { label: string; value: any })[];
 }
 
-const RadioSelection: React.FC<RadioSelectionProps> = ({ name, label, options }) => {
+const RadioSelection = ({ name, label, options }: RadioSelectionProps) => {
   const {
     control,
     formState: { errors, isSubmitting },

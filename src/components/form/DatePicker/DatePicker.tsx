@@ -1,6 +1,5 @@
 import { DatePicker as MuiDatePicker, DatePickerProps as MuiDatePickerProps } from '@mui/lab';
 import { OutlinedInput } from '@mui/material';
-import React from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
 import FormFieldWrapper from '../FormFieldWrapper/FormFieldWrapper';
 
@@ -10,7 +9,7 @@ export interface DatePickerProps
   label?: string;
 }
 
-const DatePicker: React.FC<DatePickerProps> = ({ name, label, ...rest }) => {
+const DatePicker = ({ name, label, ...rest }: DatePickerProps) => {
   const {
     control,
     formState: { errors },

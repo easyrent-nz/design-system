@@ -1,5 +1,5 @@
 import { GoogleApiWrapper, IMapProps, IProvidedProps, Map } from 'google-maps-react';
-import React, { useRef } from 'react';
+import React, { PropsWithChildren, useRef } from 'react';
 import mapStyle from '../form/MapSearch/mapStyle';
 
 export interface MapViewProps extends IProvidedProps, IMapProps {
@@ -10,12 +10,7 @@ export interface MapViewProps extends IProvidedProps, IMapProps {
 /**
  * Displays google maps using custom styles
  */
-const MapViewComponent: React.FC<MapViewProps> = ({
-  children,
-  google,
-  onAreaChange,
-  ...mapProps
-}) => {
+const MapViewComponent = ({ google, onAreaChange, ...mapProps }: MapViewProps) => {
   const nav = useRef(new google.maps.Geocoder());
 
   const handleMove = async (_?: IMapProps, map?: any) => {
@@ -35,9 +30,7 @@ const MapViewComponent: React.FC<MapViewProps> = ({
       disableDefaultUI
       {...mapProps}
       onCenterChanged={handleMove}
-    >
-      {children}
-    </Map>
+    />
   );
 };
 

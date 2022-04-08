@@ -19,7 +19,7 @@ export interface TextFieldProps extends OutlinedInputProps {
  * <a target='_blank' href='https://mui.com/api/outlined-input/'>valid props</a> to the underlying
  * `OutlinedInput` component.
  */
-const TextField: React.FC<TextFieldProps> = ({
+const TextField = ({
   label,
   disabled,
   required,

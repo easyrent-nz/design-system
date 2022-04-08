@@ -1,10 +1,9 @@
-import React from 'react';
-import { Controller, useFormContext } from 'react-hook-form';
+import DateType from '@date-io/date-fns';
 import {
   CalendarPicker as MuiCalendarPicker,
   CalendarPickerProps as MuiCalendarPickerProps,
 } from '@mui/lab';
-import DateType from '@date-io/date-fns';
+import { Controller, useFormContext } from 'react-hook-form';
 import FormFieldWrapper from '../FormFieldWrapper/FormFieldWrapper';
 
 export interface CalendarPickerProps
@@ -13,7 +12,7 @@ export interface CalendarPickerProps
   label?: string;
 }
 
-const CalendarPicker: React.FC<CalendarPickerProps> = ({ name, label, ...rest }) => {
+const CalendarPicker = ({ name, label, ...rest }: CalendarPickerProps) => {
   const {
     control,
     formState: { errors },
