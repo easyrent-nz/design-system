@@ -1,6 +1,5 @@
 import { DatePicker as MuiDatePicker, DatePickerProps as MuiDatePickerProps } from '@mui/lab';
 import { OutlinedInput } from '@mui/material';
-import { parse } from 'date-fns';
 import { Controller, useFormContext } from 'react-hook-form';
 import FormFieldWrapper from '../FormFieldWrapper/FormFieldWrapper';
 
@@ -24,18 +23,7 @@ const DatePicker = ({ name, label, ...rest }: DatePickerProps) => {
         <FormFieldWrapper errorObject={errors[name]} label={label}>
           <MuiDatePicker
             value={value || null}
-            onChange={(date) => {
-              if (!date) {
-                return onChange(null);
-              }
-
-              // Remove time zone component from date
-              const dateString = JSON.stringify(date);
-              const sliced = dateString?.slice(1, 11);
-              const newDate = parse(sliced, 'yyyy-mm-dd', new Date());
-
-              onChange(newDate);
-            }}
+            onChange={(date) => onChange(date || undefined)}
             {...field}
             {...rest}
             renderInput={({ inputRef, inputProps, InputProps }) => (
