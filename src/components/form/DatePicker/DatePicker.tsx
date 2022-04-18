@@ -34,7 +34,7 @@ const DatePicker = ({ name, label, ...rest }: DatePickerProps) => {
               const sliced = dateString?.slice(1, 11);
               const newDate = parse(sliced, 'yyyy-mm-dd', new Date());
 
-              onChange(new Date(sliced) || undefined);
+              onChange(newDate);
             }}
             {...field}
             {...rest}
