@@ -5,6 +5,7 @@ import {
 import { TextField, Box } from '@mui/material';
 import React from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
+import offsetToUtc from '../../../utils/offsetToUtc';
 import FormFieldWrapper from '../FormFieldWrapper/FormFieldWrapper';
 
 export interface DateRangePickerProps
@@ -30,7 +31,12 @@ const DateRangePicker = ({ name, label, ...rest }: DateRangePickerProps) => {
             displayStaticWrapperAs='desktop'
             calendars={1}
             value={value}
-            onChange={(date) => onChange(date)}
+            onChange={(date) =>
+              onChange([
+                date[0] ? offsetToUtc(date[0]) : null,
+                date[1] ? offsetToUtc(date[1]) : null,
+              ])
+            }
             {...field}
             {...rest}
             renderInput={(startProps, endProps) => (
