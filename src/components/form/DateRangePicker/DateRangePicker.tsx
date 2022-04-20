@@ -31,12 +31,7 @@ const DateRangePicker = ({ name, label, ...rest }: DateRangePickerProps) => {
             displayStaticWrapperAs='desktop'
             calendars={1}
             value={value}
-            onChange={(date) =>
-              onChange([
-                date[0] ? offsetToUtc(date[0]) : null,
-                date[1] ? offsetToUtc(date[1]) : null,
-              ])
-            }
+            onChange={(date) => onChange(date)}
             {...field}
             {...rest}
             renderInput={(startProps, endProps) => (

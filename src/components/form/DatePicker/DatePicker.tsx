@@ -24,7 +24,7 @@ const DatePicker = ({ name, label, ...rest }: DatePickerProps) => {
         <FormFieldWrapper errorObject={errors[name]} label={label}>
           <MuiDatePicker
             value={value || null}
-            onChange={(date) => onChange(date ? offsetToUtc(date) : undefined)}
+            onChange={(date) => onChange(date)}
             {...field}
             {...rest}
             renderInput={({ inputRef, inputProps, InputProps }) => (
