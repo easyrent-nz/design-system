@@ -8,3 +8,5 @@ export { default as ContractIconTwoTone } from './twoTone/Contract';
 export { default as PaymentIconTwoTone } from './twoTone/Payment';
 export { default as ViewingIconTwoTone } from './twoTone/Viewing';
 export { default as MessagingIconTwoTone } from './twoTone/Messaging';
+export { default as PlaceTypeWholeIconTwoTone } from './twoTone/PlaceTypeWhole';
+export { default as PlaceTypeRoomIconTwoTone } from './twoTone/PlaceTypeRoom';

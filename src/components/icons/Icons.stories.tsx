@@ -8,9 +8,12 @@ import {
   GoogleIcon,
   MessagingIconTwoTone,
   PaymentIconTwoTone,
+  PlaceTypeRoomIconTwoTone,
+  PlaceTypeWholeIconTwoTone,
   ViewingIconTwoTone,
 } from '.';
 import InstagramIcon from './Instagram';
+import PlaceTypeWholeIcon from './twoTone/PlaceTypeWhole';
 
 export default {
   title: 'Components/Icons',
@@ -53,6 +56,8 @@ export const TwoTone: Story<SvgIconProps> = (args) => (
     <PaymentIconTwoTone {...args} />
     <ViewingIconTwoTone {...args} />
     <MessagingIconTwoTone {...args} />
+    <PlaceTypeWholeIconTwoTone {...args} />
+    <PlaceTypeRoomIconTwoTone {...args} />
   </Box>
 );
 
