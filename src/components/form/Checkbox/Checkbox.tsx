@@ -12,7 +12,7 @@ export interface CheckboxProps extends MuiCheckboxProps {
   name: string;
 }
 
-const Checkbox = ({ label, name }: CheckboxProps) => {
+const Checkbox = ({ label, name, ...rest }: CheckboxProps) => {
   const {
     control,
     formState: { errors },
@@ -27,6 +27,7 @@ const Checkbox = ({ label, name }: CheckboxProps) => {
             control={control}
             render={({ field }) => (
               <MuiCheckbox
+                {...rest}
                 {...field}
                 checked={field.value}
                 onChange={(e) => field.onChange(e.target.checked)}

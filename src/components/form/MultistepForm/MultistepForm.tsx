@@ -9,12 +9,9 @@ import { LocalizationProvider } from '@mui/lab';
 export interface MultistepFormProps<T extends Record<string, any> = {}> {
   onSubmit?: SubmitHandler<T>;
   errors?: Record<keyof T, string>;
-  // eslint-disable-next-line no-unused-vars
   onStepChange?: (step: number, values: Partial<T>) => void;
-  // eslint-disable-next-line no-unused-vars
   render: (props: MultistepFormRenderProps<T>) => ReactNode;
   defaultValues?: UseFormProps<T>['defaultValues'];
-  // eslint-disable-next-line no-unused-vars
   children: (props: MultistepFormChildrenRenderProps) => ReactElement;
 }
 
