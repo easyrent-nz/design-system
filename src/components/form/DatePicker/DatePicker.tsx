@@ -1,11 +1,15 @@
-import { DatePicker as MuiDatePicker, DatePickerProps as MuiDatePickerProps } from '@mui/lab';
+import {
+  DatePicker as MuiDatePicker,
+  DatePickerProps as MuiDatePickerProps,
+} from '@mui/x-date-pickers-pro';
 import { OutlinedInput } from '@mui/material';
 import { Controller, useFormContext } from 'react-hook-form';
-import offsetToUtc from '../../../utils/offsetToUtc';
 import FormFieldWrapper from '../FormFieldWrapper/FormFieldWrapper';
 
+export type DateString = string;
+
 export interface DatePickerProps
-  extends Omit<MuiDatePickerProps, 'onChange' | 'value' | 'renderInput'> {
+  extends Omit<MuiDatePickerProps<DateString, DateString>, 'onChange' | 'value' | 'renderInput'> {
   name: string;
   label?: string;
 }
@@ -23,8 +27,8 @@ const DatePicker = ({ name, label, ...rest }: DatePickerProps) => {
       render={({ field: { value, onChange, ...field } }) => (
         <FormFieldWrapper errorObject={errors[name]} label={label}>
           <MuiDatePicker
-            value={value || null}
-            onChange={(date) => onChange(date)}
+            value={value ? value : null}
+            onChange={(date) => onChange(date?.toString())}
             {...field}
             {...rest}
             renderInput={({ inputRef, inputProps, InputProps }) => (

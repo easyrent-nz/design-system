@@ -24,7 +24,7 @@ const ValuePrinter = () => {
 
   return (
     <div>
-      <pre>value: {ctx.watch().moveInDate?.toUTCString()}</pre>
+      <pre>value: {ctx.watch().moveInDate}</pre>
     </div>
   );
 };

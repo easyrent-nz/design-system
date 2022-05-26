@@ -1,15 +1,14 @@
 import {
   StaticDateRangePicker as MuiDateRangePicker,
   DateRangePickerProps as MuiDateRangePickerProps,
-} from '@mui/lab';
+} from '@mui/x-date-pickers-pro';
 import { TextField, Box } from '@mui/material';
 import React from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
-import offsetToUtc from '../../../utils/offsetToUtc';
 import FormFieldWrapper from '../FormFieldWrapper/FormFieldWrapper';
 
 export interface DateRangePickerProps
-  extends Omit<MuiDateRangePickerProps<any>, 'onChange' | 'value' | 'renderInput'> {
+  extends Omit<MuiDateRangePickerProps<string, string>, 'onChange' | 'value' | 'renderInput'> {
   name: string;
   label?: string;
 }
