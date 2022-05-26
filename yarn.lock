@@ -2740,7 +2740,7 @@
     react-transition-group "^4.4.2"
     rifm "^0.12.1"
 
-"@mui/x-date-pickers@5.0.0-alpha.4", "@mui/x-date-pickers@^5.0.0-alpha.4":
+"@mui/x-date-pickers@5.0.0-alpha.4":
   version "5.0.0-alpha.4"
   resolved "https://registry.yarnpkg.com/@mui/x-date-pickers/-/x-date-pickers-5.0.0-alpha.4.tgz#853710d09b2dc29876e61a32d1f7b5c4b6d8816a"
   integrity sha512-bPEsVygOI5KvrySYzi4ujJlRr4uskM5hDpcV8JCafHtSNQjUMQmCDtQKpAd8rViKBCBQMK8vhpqmf8ShfiZpLA==

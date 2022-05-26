@@ -1,6 +1,6 @@
 import { yupResolver } from '@hookform/resolvers/yup';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
+import { LocalizationProvider } from '@mui/x-date-pickers-pro/LocalizationProvider';
+import { AdapterDateFns } from '@mui/x-date-pickers-pro/AdapterDateFns';
 import { PropsWithChildren, useEffect } from 'react';
 import { FormProvider, SubmitHandler, useForm, UseFormProps } from 'react-hook-form';
 import { object } from 'yup';
