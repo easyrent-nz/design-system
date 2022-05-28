@@ -3,9 +3,8 @@ import { FormEvent, ReactElement, ReactNode, useEffect, useMemo, useState } from
 import { FormProvider, SubmitHandler, useForm, UseFormReturn, UseFormProps } from 'react-hook-form';
 import { object } from 'yup';
 import { MultiStepFormContext, MultiStepFormContextState } from './MultiStepFormContext';
-import AdapterDateFns from '@mui/lab/AdapterDateFns';
-import { LocalizationProvider } from '@mui/lab';
-
+import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
+import { LocalizationProvider } from '@mui/x-date-pickers-pro';
 export interface MultistepFormProps<T extends Record<string, any> = {}> {
   onSubmit?: SubmitHandler<T>;
   errors?: Record<keyof T, string>;
