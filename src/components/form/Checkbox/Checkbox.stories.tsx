@@ -39,3 +39,10 @@ Default.args = {
   label: 'Tick me',
   name: 'checkbox',
 };
+
+export const WithSubtitle = Template.bind({});
+WithSubtitle.args = {
+  label: 'Tick me',
+  subtitle: 'Please tick the box to continue',
+  name: 'checkbox',
+};
