@@ -8,6 +8,7 @@ import {
 } from '@mui/material';
 import { Controller, useFormContext } from 'react-hook-form';
 import FormFieldWrapper from '../FormFieldWrapper/FormFieldWrapper';
+import get from 'lodash/get';
 
 export interface CheckboxProps extends MuiCheckboxProps {
   label: string;
@@ -22,8 +23,10 @@ const Checkbox = ({ label, name, subtitle, icon, ...rest }: CheckboxProps) => {
     formState: { errors },
   } = useFormContext();
 
+  const errorObj = get(errors, name);
+
   return (
-    <FormFieldWrapper errorObject={errors[name]}>
+    <FormFieldWrapper errorObject={errorObj}>
       <FormControlLabel
         control={
           <Controller

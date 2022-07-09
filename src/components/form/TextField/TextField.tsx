@@ -1,8 +1,8 @@
 import { OutlinedInput, OutlinedInputProps } from '@mui/material';
-import React, { PropsWithChildren } from 'react';
+import { PropsWithChildren } from 'react';
 import { useFormContext } from 'react-hook-form';
 import FormFieldWrapper from '../FormFieldWrapper/FormFieldWrapper';
-
+import get from 'lodash/get';
 export interface TextFieldProps extends OutlinedInputProps {
   /**
    * The label to display above the input.
@@ -32,10 +32,12 @@ const TextField = ({
     formState: { errors, isSubmitting },
   } = useFormContext();
 
+  const errorObj = get(errors, name);
+
   return (
     <FormFieldWrapper
       label={label}
-      errorObject={errors[name]}
+      errorObject={errorObj}
       disabled={disabled || isSubmitting}
       required={required}
     >

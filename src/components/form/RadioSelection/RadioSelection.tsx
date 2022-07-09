@@ -2,6 +2,7 @@ import { FormControlLabel, FormControlLabelProps, Radio, RadioGroup } from '@mui
 import React from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
 import FormFieldWrapper from '../FormFieldWrapper/FormFieldWrapper';
+import get from 'lodash/get';
 
 export interface RadioButtonProps {
   label: string;
@@ -21,13 +22,15 @@ const RadioSelection = ({ name, label, options }: RadioSelectionProps) => {
     formState: { errors, isSubmitting },
   } = useFormContext();
 
+  const errorObj = get(errors, name);
+
   return (
     <Controller
       name={name}
       control={control}
       defaultValue={options[0]?.value}
       render={({ field }) => (
-        <FormFieldWrapper label={label} disabled={isSubmitting} errorObject={errors[name]}>
+        <FormFieldWrapper label={label} disabled={isSubmitting} errorObject={errorObj}>
           <RadioGroup {...field}>
             {options.map((option) => (
               <FormControlLabel key={option.value} {...option} control={<Radio />} />

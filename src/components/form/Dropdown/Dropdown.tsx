@@ -1,7 +1,8 @@
 import { Select, SelectProps } from '@mui/material';
-import React, { PropsWithChildren } from 'react';
+import { PropsWithChildren } from 'react';
 import { useFormContext } from 'react-hook-form';
 import FormFieldWrapper from '../FormFieldWrapper/FormFieldWrapper';
+import get from 'lodash/get';
 
 export interface DropdownProps<T> extends SelectProps<T> {
   label?: string;
@@ -14,8 +15,10 @@ const Dropdown = <T,>({ children, label, name }: PropsWithChildren<DropdownProps
     formState: { errors },
   } = useFormContext();
 
+  const errorObj = get(errors, name);
+
   return (
-    <FormFieldWrapper label={label} errorObject={errors[name]}>
+    <FormFieldWrapper label={label} errorObject={errorObj}>
       <Select {...register(name)}>{children}</Select>
     </FormFieldWrapper>
   );

@@ -2,6 +2,7 @@ import { Autocomplete, AutocompleteProps, TextField } from '@mui/material';
 import React, { useEffect, useRef } from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
 import FormFieldWrapper from '../FormFieldWrapper/FormFieldWrapper';
+import get from 'lodash/get';
 
 export interface SearchProps<T>
   extends Omit<AutocompleteProps<T, false, false, false>, 'options' | 'renderInput' | 'ref'> {
@@ -41,6 +42,8 @@ const Search = <T extends { label: string }>({
     control,
   } = useFormContext();
 
+  const errorObj = get(errors, name);
+
   useEffect(() => {
     window.clearTimeout(searchTimeout.current);
     if (inputValue) {
@@ -58,7 +61,7 @@ const Search = <T extends { label: string }>({
       name={name}
       control={control}
       render={({ field: { value, onChange, ...field } }) => (
-        <FormFieldWrapper label={label} errorObject={errors[name]} sx={{ width: '100%' }}>
+        <FormFieldWrapper label={label} errorObject={errorObj} sx={{ width: '100%' }}>
           <Autocomplete<T, false, false, false>
             sx={{ width: '100%' }}
             onInputChange={(e, v) => setInputValue(v)}

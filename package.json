@@ -1,6 +1,6 @@
 {
   "name": "@easyrent-nz/components",
-  "version": "0.17.5",
+  "version": "0.17.6",
   "description": "Design system with reusable react components",
   "license": "MIT",
   "main": "lib/cjs/index.js",
@@ -21,6 +21,7 @@
     "@mui/icons-material": "^5.1.0",
     "@mui/lab": "^5.0.0-alpha.72",
     "@mui/material": "^5.0.6",
+    "@mui/x-date-pickers-pro": "^5.0.0-alpha.4",
     "@rollup/plugin-commonjs": "^20.0.0",
     "@rollup/plugin-node-resolve": "^13.0.4",
     "@types/google.maps": "^3.46.1",
@@ -46,7 +47,6 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-hook-form": "^7.19.4",
-    "@mui/x-date-pickers-pro": "^5.0.0-alpha.4",
     "react-swipeable-views": "^0.14.0",
     "rimraf": "^3.0.2",
     "rollup": "^2.56.1",
@@ -55,12 +55,12 @@
   },
   "peerDependencies": {
     "@date-io/date-fns": "^2.11.0",
-    "@mui/x-date-pickers-pro": "^5.0.0-alpha.4",
     "@emotion/react": "^11.5.0",
     "@emotion/styled": "^11.3.0",
     "@mui/icons-material": "^5.1.0",
     "@mui/lab": "^5.0.0-alpha.72",
     "@mui/material": "^5.0.6",
+    "@mui/x-date-pickers-pro": "^5.0.0-alpha.4",
     "date-fns": "^2.25.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -89,6 +89,7 @@
     "@storybook/addon-links": "^6.3.6",
     "@storybook/react": "^6.3.6",
     "@storybook/storybook-deployer": "^2.8.10",
-    "google-maps-react": "^2.0.6"
+    "google-maps-react": "^2.0.6",
+    "lodash": "^4.17.21"
   }
 }

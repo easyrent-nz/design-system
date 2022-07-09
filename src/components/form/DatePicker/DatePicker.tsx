@@ -5,6 +5,7 @@ import {
 import { OutlinedInput } from '@mui/material';
 import { Controller, useFormContext } from 'react-hook-form';
 import FormFieldWrapper from '../FormFieldWrapper/FormFieldWrapper';
+import get from 'lodash/get';
 
 export type DateString = string;
 
@@ -20,12 +21,14 @@ const DatePicker = ({ name, label, ...rest }: DatePickerProps) => {
     formState: { errors },
   } = useFormContext();
 
+  const errorObj = get(errors, name);
+
   return (
     <Controller
       control={control}
       name={name}
       render={({ field: { value, onChange, ...field } }) => (
-        <FormFieldWrapper errorObject={errors[name]} label={label}>
+        <FormFieldWrapper errorObject={errorObj} label={label}>
           <MuiDatePicker
             value={value ? value : null}
             onChange={(date) => onChange(date?.toString())}
