@@ -37,7 +37,7 @@ const Checkbox = ({ label, name, subtitle, icon, ...rest }: CheckboxProps) => {
                 {...rest}
                 sx={{ '& .MuiSvgIcon-root': { fontSize: subtitle ? 28 : undefined }, ...rest.sx }}
                 {...field}
-                checked={field.value}
+                checked={field.value || false}
                 onChange={(e) => field.onChange(e.target.checked)}
               />
             )}
